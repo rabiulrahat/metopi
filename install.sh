@@ -25,4 +25,5 @@ fi
 # Install Python package
 pip install .
 
-echo "Installation complete! Run 'metopi' to start the timer."
+echo "Installation complete! Run 'metopi/python3 -m metopi.app
+' to start the timer."

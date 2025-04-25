@@ -4,7 +4,7 @@ setup(
     name="metopi",
     version="1.0.0",
     description="A modern, cross-platform countdown timer",
-    author="Your Name",
+    author="Rabiul Rahat",
     packages=find_packages(),
     install_requires=[],
     entry_points={
