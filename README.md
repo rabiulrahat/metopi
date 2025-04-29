@@ -1,78 +1,80 @@
 # Metopi
 
-A modern, cross-platform countdown timer with a clean interface and customizable display.
+A modern, cross-platform countdown timer with a sleek interface and useful features.
 
 ## Features
 
-- Clean, minimalist design
+- Clean, modern interface
+- Multiple color themes
 - Fullscreen mode
-- Customizable colors
-- Cross-platform sound notifications
+- Sound notifications
 - Keyboard shortcuts
-- Easy time input
+- Cross-platform support
 
 ## Installation
 
+### Linux (Debian/Ubuntu)
+
+You can install Metopi using the provided .deb package:
+
+```bash
+# Build the package
+./packaging/build_deb.sh
+
+# Install the package
+sudo dpkg -i dist/metopi.deb
+sudo apt-get install -f  # Install dependencies if needed
+```
+
+After installation, you can:
+- Run `metopi` from terminal
+- Find Metopi in your applications menu
+
 ### Windows
 
-```bash
-# Clone the repository
-git clone https://github.com/rabiulrahat/metopi.git
-cd metopi
+You have two options for Windows installation:
 
-# Install using pip
-pip install .
-```
+1. Using the installer:
+   - Run the packaging/build_exe.bat script
+   - Run the generated dist/MetopiSetup.exe
+   - Launch Metopi from the Start Menu
 
-### Linux
-
-```bash
-# Install system dependencies (for sound)
-sudo apt-get install sox    # For Debian/Ubuntu
-# OR
-sudo dnf install sox        # For Fedora
-# OR
-sudo pacman -S sox         # For Arch Linux
-
-# Clone and install
-git clone https://github.com/rabiulrahat/metopi.git
-cd metopi
-pip install .
-```
-
-## Usage
-
-After installation, run Metopi from the terminal:
-
-```bash
-metopi
-```
-
-### Controls
-
-- **Time Input**: Enter minutes and seconds directly
-- **Space**: Start/Pause timer
-- **R**: Reset timer
-- **C**: Change color
-- **F11**: Toggle fullscreen
-- **Esc**: Exit fullscreen
-- **Q**: Quit
+2. Portable version:
+   - Run the packaging/build_exe.bat script
+   - Use the generated dist/metopi.exe directly
 
 ## Development
 
-To run from source:
+### Requirements
+
+- Python 3.6 or higher
+- Tkinter (usually comes with Python)
+- pip (Python package manager)
+
+### Setup Development Environment
 
 ```bash
-python -m metopi.app
+# Clone the repository
+git clone https://github.com/yourusername/metopi.git
+cd metopi
+
+# Install in development mode
+pip install -e .
 ```
+
+### Building Packages
+
+For detailed packaging instructions, see [packaging/README.md](packaging/README.md)
+
+## Usage
+
+- Set minutes and seconds using the input fields
+- Start/Pause: Space bar or ▶ button
+- Reset: R key or ↺ button
+- Change color: C key or 🎨 button
+- Toggle fullscreen: F11 or ⛶ button
+- Exit fullscreen: Escape key
 
 ## License
 
-MIT License
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+MIT License - see LICENSE file for details

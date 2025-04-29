@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+
+# Create symlink to make the command available system-wide
+ln -sf /usr/share/metopi/metopi-runner /usr/local/bin/metopi
+
+# Update desktop database
+if [ -x "$(command -v update-desktop-database)" ]; then
+    update-desktop-database
+fi
+
+# Update icon cache
+if [ -x "$(command -v gtk-update-icon-cache)" ]; then
+    gtk-update-icon-cache -f -t /usr/share/icons/hicolor
+fi
+
+exit 0

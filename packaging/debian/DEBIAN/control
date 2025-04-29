@@ -1,0 +1,11 @@
+Package: metopi
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Depends: python3 (>= 3.6), python3-tk, python3-pip
+Maintainer: Rabiul Rahat
+Description: A modern, cross-platform countdown timer
+ Metopi is a sleek and modern countdown timer application
+ featuring color themes, fullscreen mode, and sound notifications.
+ Perfect for presentations, cooking, or any timed activities.

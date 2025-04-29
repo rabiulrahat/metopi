@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0.0
+Type=Application
+Name=Metopi
+Comment=Modern countdown timer
+Exec=/usr/local/bin/metopi
+Icon=metopi
+Terminal=false
+Categories=Utility;
+Keywords=timer;countdown;clock;
