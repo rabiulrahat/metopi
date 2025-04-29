@@ -3,12 +3,29 @@
 # Exit on error
 set -e
 
+cleanup() {
+    echo "Cleaning up..."
+    # Remove Python cache files
+    find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
+    find . -type f -name "*.pyc" -delete
+    find . -type f -name "*.pyo" -delete
+    # Remove temporary build files
+    rm -rf build/deb_build
+}
+
+# Ensure cleanup runs on script exit
+trap cleanup EXIT
+
 echo "Building Metopi .deb package..."
 
 # Create temporary build directory
 BUILD_DIR="build/deb_build"
 rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
+
+# Ensure build and dist directories have .trackerignore
+mkdir -p build dist
+touch build/.trackerignore dist/.trackerignore
 
 # Copy debian package structure
 cp -r packaging/debian/* "$BUILD_DIR/"

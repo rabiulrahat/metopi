@@ -1,11 +1,33 @@
 @echo off
+setlocal EnableDelayedExpansion
+
 echo Building Metopi Windows package...
+
+REM Cleanup function
+:cleanup
+echo Cleaning up...
+REM Remove Python cache
+for /d /r . %%d in (__pycache__) do @if exist "%%d" rd /s /q "%%d"
+del /s /q *.pyc 2>nul
+del /s /q *.pyo 2>nul
+goto :eof
+
+REM Set cleanup to run on script exit
+REM Create a temporary batch file that will be called on exit
+set "CLEANUP_SCRIPT=%TEMP%\cleanup_%RANDOM%.bat"
+echo @echo off > "%CLEANUP_SCRIPT%"
+echo call :cleanup >> "%CLEANUP_SCRIPT%"
+echo exit /b >> "%CLEANUP_SCRIPT%"
+
+REM Register the cleanup script to run on exit
+set "CLEANUP_ON_EXIT=start /b "" cmd /c "%CLEANUP_SCRIPT%""
+at exit %CLEANUP_ON_EXIT%
 
 REM Set paths
 set "SCRIPT_DIR=%~dp0"
 cd %SCRIPT_DIR%\..
 
-REM Create build directories
+REM Create build directories and ensure .trackerignore exists
 if not exist "dist" mkdir dist
 if not exist "build" mkdir build
 

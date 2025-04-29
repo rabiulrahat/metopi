@@ -3,22 +3,21 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
 *.egg
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg-info/
+.eggs/
+
+# Build outputs
+dist/
+build/
+*.deb
+*.exe
+*.spec
+*.ico
 
 # IDE
 .vscode/
@@ -26,11 +25,11 @@ wheels/
 *.swp
 *.swo
 
-# Environment
-.env
-venv/
-ENV/
-
-# OS
+# Temporary files
 .DS_Store
 Thumbs.db
+*~
+
+# Virtual Environment
+venv/
+ENV/
