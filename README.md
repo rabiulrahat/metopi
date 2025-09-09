@@ -55,7 +55,7 @@ You have two options for Windows installation:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/metopi.git
+https://github.com/rabiulrahat/metopi.git
 cd metopi
 
 # Install in development mode
